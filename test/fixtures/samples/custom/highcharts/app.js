@@ -15,7 +15,7 @@ app.get(/\/stats(?:\/(\w+))?/, function (req, res, next) {
     var db = res.locals._admin.db;
 
     // get the month from the url
-    var month = req.params[0] || 'january';
+    var month = req.params[0] || '01';
 
     queryDatabase(db, month, function (err, rows, total) {
         if (err) return next(err);
@@ -69,12 +69,12 @@ app.all(/\/stats(?:\/(\w+))?/, function (req, res, next) {
 
 function getMonths (month) {
     var months = [
-        {value: 'january', text: 'January'},
-        {value: 'february', text: 'February'},
-        {value: 'mart', text: 'Mart'},
-        {value: 'april', text: 'April'},
-        {value: 'may', text: 'May'},
-        {value: 'june', text: 'June'}
+        {value: '01', text: 'January'},
+        {value: '02', text: 'February'},
+        {value: '03', text: 'Mart'},
+        {value: '04', text: 'April'},
+        {value: '05', text: 'May'},
+        {value: '06', text: 'June'}
     ];
     // set the selected month
     for (var i=0; i < months.length; i++) {
