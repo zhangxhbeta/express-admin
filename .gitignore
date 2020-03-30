@@ -17,3 +17,5 @@ public/upload
 coverage
 .idea
 package-lock.json
+
+.vscode
